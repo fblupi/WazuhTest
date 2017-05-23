@@ -1,2 +1,2 @@
 # WazuhTest
-Pruebas realizadas durante el proceso de selección de Wazu Inc.
+Pruebas realizadas durante el proceso de selección de Wazuh Inc.
