@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "md5_op.h"
 
 int main(int argc, char **argv)
 {
@@ -11,8 +12,10 @@ int main(int argc, char **argv)
     return(-1);
   }
 
-  const size_t line_size = 100;
-  char line[line_size], *id, *name, *hash;
+  const size_t line_size = 80;
+  const size_t key_size = 35;
+  char line[line_size], *id, *name, *hash, key[key_size];
+  os_md5 filesum;
 
   while (fgets(line, line_size, fp) != NULL)
   {
@@ -22,7 +25,19 @@ int main(int argc, char **argv)
 
     if (id != NULL && name != NULL && hash != NULL)
     {
+      strcpy(key, id);
+      strcat(key, name);
 
+      OS_MD5_Str(key, filesum);
+      
+      if (strcmp(hash, filesum) == 0)
+      {
+        printf("%s OK\n", id);
+      }
+      else
+      {
+        printf("%s KO\n", id);
+      }
     }
     else
     {
