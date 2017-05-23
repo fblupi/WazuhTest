@@ -1,0 +1,22 @@
+<!--
+  -  Evil decoders
+  -  Author: Francisco Javier Bolívar Lupiáñez.
+  -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
+-->
+
+<!--
+  -  Will extract the dstuser, srcip
+  -  Example:
+  -  Feb 17 00:01:02 HostWazuh evil[12345]: User 'john' from '10.10.01.01': bad guy.
+-->
+
+<decoder name="evil">
+  <program_name>^evil</program_name>
+</decoder>
+
+<decoder name="evil-bad-guy">
+  <parent>evil</parent>
+  <prematch offset="after_parent">^User '\w+' from '\d+.\d+.\d+.\d+': bad guy.$</prematch>
+  <regex offset="after_parent">^User '(\w+)' from '(\d+.\d+.\d+.\d+)'</regex>
+  <order>dstuser, srcip</order>
+</decoder>
