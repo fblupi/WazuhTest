@@ -1,0 +1,18 @@
+<!--
+  -  Evil rules
+  -  Author: Francisco Javier Bolívar Lupiáñez
+  -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
+-->
+
+<!-- ID: 100011 -->
+
+<group name="evil,">
+
+  <!--
+  Feb 17 00:01:02 HostWazuh evil[12345]: User 'john' from '10.10.01.01': bad guy.
+  -->
+  <rule id="100001" level="0">
+    <description>Evil Alert!</description>
+  </rule>
+
+</group>
