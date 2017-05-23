@@ -62,12 +62,12 @@ def get_last_alert(date, alerts):
     return out
 
 fname = '/var/ossec/logs/alerts/alerts.log'
-regex_date = re.compile('[0-9]{4}/[0-9]{2}/[0-9]{2}')
-regex_timestamp = re.compile('[0-9]{4} [a-zA-Z]{3} [0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}')
-regex_rule_id = re.compile('Rule: [0-9]*')
-regex_rule_level = re.compile('\(level [0-9]*\)')
+regex_date = re.compile('\d{4}/\d{2}/\d{2}')
+regex_timestamp = re.compile('\d{4} \w{3} \d{2} \d{2}:\d{2}:\d{2}')
+regex_rule_id = re.compile('Rule: \d*')
+regex_rule_level = re.compile('\(level \d*\)')
 regex_log_file = re.compile('->.*')
-regex_integer = re.compile('[0-9]+')
+regex_integer = re.compile('\d+')
 usage = "Usage:\n  " + sys.argv[0] + "   for getting last alert information\n  " + sys.argv[0] + " -d YYYY/MM/DD   for getting last alert information giving a day"
 
 if len(sys.argv) == 1 or len(sys.argv) == 3:
