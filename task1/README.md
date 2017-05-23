@@ -53,3 +53,7 @@ sudo /var/ossec/bin/ossec-control restart
 # Problemas encontrados durante el proceso
 
 Durante este proceso no se ha tenido ningún problema, pues siguiendo los pasos proporcionados en la [web de Wazuh](https://documentation.wazuh.com/1.1/wazuh_installation.html) la instalación se realiza fácilmente.
+
+# Diferencias entre OSSEC-Wazuh y OSSEC
+
+OSSEC-Wazuh es un fork de OSSEC que contiene caracterísitcas adicionales como el soporte de logging en JSON así como la inegración con Elasticsearch, Logstash y Kibana. Además cuenta con una API RESTful la cual permite realizar una gestión de OSSEC-Wazuh de forma remota.
